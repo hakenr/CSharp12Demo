@@ -1,2 +1,2 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿InlineArrays.Demo.Run();
+//InlineArrays.Demo2.Run();
