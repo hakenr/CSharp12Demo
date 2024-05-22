@@ -24,7 +24,7 @@ public static class Demo
 		}
 
 		// can be exposed as a Span/ReadOnlySpan
-		var span = MemoryMarshal.CreateSpan(ref Unsafe.As<MyBuffer10, int>(ref buffer), 10);
+		Span<int> span = MemoryMarshal.CreateSpan(ref Unsafe.As<MyBuffer10, int>(ref buffer), 10);
 		DoSomething(span);
 	}
 
@@ -38,7 +38,7 @@ public static class Demo
 }
 
 
-public static class Demo2
+public static class Demo2 // corrupted
 {
 	public static void Run()
 	{
@@ -57,7 +57,7 @@ public static class Demo2
 			buffer[i] = i;
 		}
 
-		// can be exposed as a Span/ReadOnlySpan
+		// ? can be exposed as a Span/ReadOnlySpan ? see the result !
 		return MemoryMarshal.CreateSpan(ref Unsafe.As<MyBuffer10, int>(ref buffer), 10);
 	}
 }
