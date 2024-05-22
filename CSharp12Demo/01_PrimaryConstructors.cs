@@ -40,7 +40,7 @@ public class ClassWithCapture(int id)
 
 	public void Mutate(int newId)
 	{
-		id = newId;
+		id = newId; // constructor parameters are NOT readonly
 	}
 }
 
