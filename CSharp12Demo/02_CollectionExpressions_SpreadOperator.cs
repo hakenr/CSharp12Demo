@@ -10,6 +10,8 @@ public class Demo
 		// Create a span
 		Span<int> b = ['a', 'b', 'c', 'd', 'e', 'f', 'h', 'i'];
 
+		// var x = [1, 2, 3]; // ERROR, there is no target type for the collection expression
+
 		// Create a jagged 2D array:
 		int[][] twoD = [[1, 2, 3], [4, 5, 6], [7, 8, 9]];
 
@@ -19,14 +21,18 @@ public class Demo
 		int[] row2 = [7, 8, 9];
 		int[][] twoDFromVariables = [row0, row1, row2];
 
+
 		// spread operator
 		int[] c = [0, .. row0, .. row1, -9, -10]; // [0, 1, 2, 3, 4, 5, 6, -9, -10]
+
 
 		// target-typed compiler optimization
 		DoSomething([1, 2, 3]);	 
 		DoSomething2([1, 2, 3]);
 		DoSomething3([1, 2, 3]);	 
 	}
+
+	// see ILSpy
 
 	public void DoSomething(List<int> items)
 	{
