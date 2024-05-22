@@ -17,7 +17,7 @@ public static class Demo
 
 	private static void DoSomething(ref readonly int num)
 	{
-		// num++;   // Cannot assign to variable or use it as the right hand side of a ref assignment because it is a readonly variable
+		// num++;   // CS8331: Cannot assign to variable or use it as the right hand side of a ref assignment because it is a readonly variable
 		Console.WriteLine(num);
 	}
 }
